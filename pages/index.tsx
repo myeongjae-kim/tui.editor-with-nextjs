@@ -10,7 +10,7 @@ const IndexPage = () => (
         <a>About</a>
       </Link>
     </p>
-    <WysiwygEditor />
+    <WysiwygEditor onChange={(value) => console.log(value)} />
   </Layout>
 )
 
