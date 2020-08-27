@@ -33,7 +33,12 @@ const WysiwygEditor: React.FC<Props> = (props) => {
     props.onChange(valueType === "markdown" ? instance.getMarkdown() : instance.getHtml());
   }, [props, editorRef]);
 
+  const handleReset = React.useCallback(() => {
+    editorRef.current?.getInstance().reset();
+  }, [])
+
   return <div>
+    <button onClick={handleReset}>reset</button>
     <EditorWithForwardedRef
       {...props}
       initialValue={initialValue || "hello react editor world!"}
